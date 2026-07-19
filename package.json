@@ -1,0 +1,9 @@
+{
+  "name": "bilibili-getnote-sync-extension",
+  "version": "1.6.1",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "node --check background.js && node --check core.js && node --check favorite-listener.js && node --check options.js && node --check popup.js"
+  }
+}

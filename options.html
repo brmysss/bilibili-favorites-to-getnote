@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B站收藏 → 得到大脑设置</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="options-page">
+    <main class="panel settings-panel">
+      <header>
+        <div class="brand-row">
+          <img class="brand-icon large" src="icons/icon-128.png" alt="边牧图标" />
+          <p class="eyebrow">BILIBILI × GETNOTE</p>
+        </div>
+        <h1>B站收藏 → 得到大脑</h1>
+        <p class="muted">自动发现收藏夹新增内容，并交给得到大脑解析和归档。</p>
+      </header>
+
+      <section>
+        <h2>同步范围</h2>
+        <label>
+          开始日期
+          <input id="startDate" type="date" />
+        </label>
+        <label class="checkbox-row">
+          <input id="syncAllHistory" type="checkbox" />
+          <span>同步全部日期的现有收藏</span>
+        </label>
+        <label>
+          自动检查间隔（分钟）
+          <input id="intervalMinutes" type="number" min="1" max="1440" />
+        </label>
+        <p class="hint">
+          默认首次检查只建立基线，不上传历史收藏。开启“同步全部日期”后，会上传所有尚未处理的现有收藏。B站轻量接口不提供收藏时间，因此无法精确按历史日期切分。
+        </p>
+      </section>
+
+      <section>
+        <h2>数据备份</h2>
+        <p class="hint">
+          同步基线、处理记录和日志保存在本机的 <code>chrome.storage.local</code>。导出的 JSON 默认不包含 API Key 和 Client ID。
+        </p>
+        <div class="row wrap">
+          <button id="exportData" class="secondary" type="button">导出 JSON</button>
+          <button id="importData" class="secondary" type="button">导入 JSON</button>
+          <input id="importFile" type="file" accept="application/json,.json" hidden />
+        </div>
+      </section>
+
+      <section>
+        <h2>使用教程与项目</h2>
+        <div class="resource-links">
+          <a href="https://blog.brmys.cn/bilibili-favorites-to-getnote-20260719" target="_blank" rel="noreferrer">
+            📖 插件完整使用教程
+          </a>
+          <a href="https://github.com/brmysss/bilibili-favorites-to-getnote" target="_blank" rel="noreferrer">
+            GitHub 源码与新版下载
+          </a>
+        </div>
+      </section>
+
+      <section>
+        <h2>得到大脑 OpenAPI</h2>
+        <label>
+          API Key
+          <input id="getnoteApiKey" type="password" autocomplete="off" placeholder="gk_live_…" />
+        </label>
+        <label>
+          Client ID
+          <input id="getnoteClientId" type="password" autocomplete="off" placeholder="cli_…" />
+        </label>
+        <label>
+          目标知识库 ID（可选）
+          <input id="getnoteTopicId" type="text" placeholder="留空则只保存到全部笔记" />
+        </label>
+        <label>
+          标签（逗号分隔）
+          <input id="tags" type="text" value="B站收藏, 自动同步" />
+        </label>
+        <p class="hint">密钥保存在 Chrome 本地存储，不会写入插件源码或同步日志。</p>
+        <button id="testGetnote" class="secondary" type="button">测试 Get笔记连接</button>
+      </section>
+
+      <footer class="row">
+        <button id="save" type="button">保存设置</button>
+        <span id="message" class="muted"></span>
+      </footer>
+    </main>
+    <script src="core.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

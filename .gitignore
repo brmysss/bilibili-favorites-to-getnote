@@ -1,0 +1,5 @@
+_metadata/
+*.pem
+*.crx
+*.json.backup
+backups/

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B站收藏同步</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="popup-page">
+    <main class="popup">
+      <div class="brand-row">
+        <img class="brand-icon" src="icons/icon-48.png" alt="边牧图标" />
+        <p class="eyebrow">BILIBILI × GETNOTE</p>
+      </div>
+      <h1>收藏同步</h1>
+      <div class="stats">
+        <div><strong id="syncedCount">—</strong><span>已记录</span></div>
+        <div><strong id="lastResult">—</strong><span>上次新增</span></div>
+      </div>
+      <p id="status" class="status muted">正在读取状态…</p>
+      <button id="syncNow" type="button">检查收藏夹新增</button>
+      <button id="openOptions" class="secondary" type="button">设置</button>
+      <div id="logs" class="logs"></div>
+      <footer class="popup-footer">
+        <span>© 白日梦与诗</span>
+        <a href="https://blog.brmys.cn/" target="_blank" rel="noreferrer">blog.brmys.cn</a>
+      </footer>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
