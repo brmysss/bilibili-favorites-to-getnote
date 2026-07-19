@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "B站收藏 → 得到大脑",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "从指定日期开始，将新收藏的 B站视频链接自动保存到得到大脑/Get笔记。",
   "homepage_url": "https://blog.brmys.cn/",
   "permissions": ["alarms", "storage", "cookies", "tabs"],

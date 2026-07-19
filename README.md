@@ -1,8 +1,8 @@
 # B站收藏 → 得到大脑
 
-当前版本：`1.6.1`
+当前版本：`1.6.2`
 
-完整教程：https://blog.brmys.cn/bilibili-favorites-to-getnote-20260719
+完整教程：https://blog.brmys.cn/bili-getnote
 
 项目主页：https://github.com/brmysss/bilibili-favorites-to-getnote
 
